@@ -36,12 +36,16 @@ Si tiene problemas revise que los puertos no esten ocupados en su equipo.
 ### 1. General.
 #### 1.1. Tener las versiones de las librerias de forma exacta, es decir, sin el simbolo ^, esto para tener mayor control y actualizar de forma manual y consciente los paquetes.
 #### 1.2 Usar convenciones como standard js para consistencia en el codigo.
+#### 1.3 Se recomienda usar la extension de vs code llamada thunder client para ver la documentacion de la api, se puede importar con el archivo konectaApi.json.
+#### 1.4 Los codigo de respuesta http que deberian ser 404 o 204 los reemplazo por otros por conveniencia del frontend.
 
 ### 2. Backend.
 #### 2.1. Configurar correctamente los headers en las peticiones http para garantizar seguridad en la comunicacion, para este fin se recomienda la libreria helmet.
 #### 2.2. Dejar las variables de conexiones a bases de datos, token de apis, secretos, etc. en un archivo .env y no hacerlo publico, ya que son datos importantes, (en este caso se muestran por comodidad de revision).
 #### 2.3. Cifrar el jwt de sesion generado para mayor seguridad.
 #### 2.4 No guardar las contraseñas directamente en la base de datos, estas deben ir cifradas o usar otros metodos para garantizar la mayor proteccion de esta informacion.
+#### 2.5 Sanitizar los datos recibidos, para esto se recomiendan orm o librerias como express-validator, esto con el fin de proteger la api de ataques.
+#### 2.6 Realizar test para mas casos, esto obviamente lleva mas tiempo.
 
 ### 3. Frontend
 #### 3.1. Usar un manejador de estado diferente del Context api de react, ya que al usar esta herramienta se pueden presentar problemas de rendimiento y complejidad del codigo innecesaria, se recomienda alternativas como zustand, jotai, redux, etc.

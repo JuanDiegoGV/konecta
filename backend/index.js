@@ -32,3 +32,5 @@ app.use('/api', require('./routes/index'))
 app.listen(3000, () => {
   console.log(`Server is Listening on 3000`)
 })
+
+module.exports = app
